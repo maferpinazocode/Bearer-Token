@@ -11,6 +11,11 @@ const USERS = {
   admin: "1234", // Usuario y contraseña de ejemplo
 };
 
+// Ruta de prueba
+app.get('/', (req, res) => {
+    res.send('¡El servidor está funcionando correctamente!');
+});
+
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
@@ -23,4 +28,4 @@ app.post("/login", (req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`OAuth Server corriendo en http://localhost:8080`));
+app.listen(PORT, () => console.log(`OAuth Server corriendo en http://localhost:${PORT}`));
